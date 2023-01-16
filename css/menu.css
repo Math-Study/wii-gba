@@ -1,3 +1,4 @@
+@import url('https://fonts.cdnfonts.com/css/baloo-da');
 html {
     background-color: #E4E4E4;
     overflow-y: hidden;
@@ -18,11 +19,24 @@ height: 9.3vw;
 width: 20vw;
 display: inline-block;
 background-image: url("../assets/empty.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.empty-tile::before {
+    content: "";
+    background-image: url("../assets/empty.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+      position: absolute;
+      opacity: 0.75;
 }
 
 .empty-tile:hover {
     background: #D9D9D9;
     transform: scale(1.02);
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .start-wrap {
@@ -69,7 +83,7 @@ html {
     cursor: url("../assets/wii-grab.cur"), pointer;
   }
   
-  input {
+  a {
     cursor: url("../assets/wii-pointer-reverse.cur"), pointer;
   }
 
@@ -85,11 +99,94 @@ html {
 
 .safety-back {
     width: 100vw;
-    height: 100vh;
+    height: 1000vh;
     background-color: #000000;
-    opacity: 0.5;
     z-index: 999;
     top: 0;
     left: 0;
     position: absolute;
+}
+
+
+
+
+
+/* Expand CODE */
+.expand {
+        width: 90vw;
+        height: 80vh;
+        position: absolute;
+        z-index: 999;
+        background: #D9D9D9;
+border: 0.3vw solid #0d53b1;
+border-radius: 2vw;
+display: inline-block;
+}
+
+.hidden {
+    display: none;
+}
+
+.gba-content {
+    display: block;
+    position: absolute;
+    padding: 5vh;
+    bottom: 5vh;
+    left: 5vw;
+}
+
+.option-1 {
+    padding: 5vw;
+    font-size: 3vw;
+    text-decoration: none;
+    font-family: 'Baloo Da';
+    color: #313330;
+}
+
+.bubble-option:hover {
+    transform: scale(1.1);
+}
+
+.bubble-option-1:hover {
+    transform: scale(1.1);
+}
+
+.bubble-option {
+    border-radius: 5vh;
+    outline: #0d53b1;
+    outline-width: 10vw;
+    background-color: #9fa5ab;
+    width: 30vw;
+    height: 5vw;
+    text-align: center;
+    display: inline-block;
+    margin-right: 15vw;
+}
+
+.bubble-option-1 {
+    border-radius: 5vh;
+    outline: #0d53b1;
+    outline-width: 10vw;
+    background-color: #9fa5ab;
+    width: 30vw;
+    height: 5vw;
+    text-align: center;
+    display: inline-block;
+}
+
+
+.option-2 {
+    padding: 5vw;
+    font-size: 3vw;
+    text-decoration: none;
+    font-family: 'Baloo Da';
+    color: #313330;
+}
+
+.game-name {
+    font-size: 5vw;
+    font-family: 'Baloo Da';
+    color: #000000;
+    text-align: center;
+    margin-bottom: 40vh;
 }

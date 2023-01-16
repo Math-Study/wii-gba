@@ -14,9 +14,17 @@
 
     <body>
 
-<div class="start-wrap">
+<div class="start-wrap" id="startW">
     <div onmouseover="PlaySound('mySound')" 
-    onmouseout="StopSound('mySound')" onclick="PlaySound('clickSound')" class="empty-tile"></div>
+    onmouseout="StopSound('mySound')" onclick="PlaySound('clickSound')" class="empty-tile" id="gba-tile">
+    <div id="gba-content" class="hidden">
+        <h1 class="game-name">Gameboy Advanced Emulator</h1>
+
+
+        <div class="bubble-option"><a class="option-1" id="Wiimenu">Wii Menu</a></div>
+        <div class="bubble-option-1"><a class="option-2" href="gba.html">Start GBA</a></div>
+    </div>
+</div>
     <div onmouseover="PlaySound('mySound')" 
     onmouseout="StopSound('mySound')" onclick="PlaySound('clickSound')" class="empty-tile"></div>
     <div onmouseover="PlaySound('mySound')" 
