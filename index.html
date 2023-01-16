@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Wii Menu!
+        </title>
+
+        <link rel="stylesheet" type="text/css" href="css/menu.css">
+    </head>
+
+
+
+
+
+    <body>
+
+<div class="start-wrap">
+    <div onmouseover="PlaySound('mySound')" 
+    onmouseout="StopSound('mySound')" onclick="PlaySound('clickSound')" class="empty-tile"></div>
+    <div onmouseover="PlaySound('mySound')" 
+    onmouseout="StopSound('mySound')" onclick="PlaySound('clickSound')" class="empty-tile"></div>
+    <div onmouseover="PlaySound('mySound')" 
+    onmouseout="StopSound('mySound')" onclick="PlaySound('clickSound')" class="empty-tile"></div>
+    <div onmouseover="PlaySound('mySound')" 
+    onmouseout="StopSound('mySound')" onclick="PlaySound('clickSound')" class="empty-tile"></div>
+</div>
+
+<div class="display-wrap">
+<div onmouseover="PlaySound('mySound')" 
+onmouseout="StopSound('mySound')" onclick="PlaySound('clickSound')" class="empty-tile"></div>
+<div onmouseover="PlaySound('mySound')" 
+onmouseout="StopSound('mySound')" onclick="PlaySound('clickSound')" class="empty-tile"></div>
+<div onmouseover="PlaySound('mySound')" 
+onmouseout="StopSound('mySound')" onclick="PlaySound('clickSound')" class="empty-tile"></div>
+<div onmouseover="PlaySound('mySound')" 
+onmouseout="StopSound('mySound')" onclick="PlaySound('clickSound')" class="empty-tile"></div>
+</div>
+
+<div class="display-wrap">
+    <div onmouseover="PlaySound('mySound')" 
+    onmouseout="StopSound('mySound')" onclick="PlaySound('clickSound')" class="empty-tile"></div>
+    <div onmouseover="PlaySound('mySound')" 
+    onmouseout="StopSound('mySound')" onclick="PlaySound('clickSound')" class="empty-tile"></div>
+    <div onmouseover="PlaySound('mySound')" 
+    onmouseout="StopSound('mySound')" onclick="PlaySound('clickSound')" class="empty-tile"></div>
+    <div onmouseover="PlaySound('mySound')" 
+    onmouseout="StopSound('mySound')" onclick="PlaySound('clickSound')" class="empty-tile"></div>
+</div>
+
+
+
+<img src="assets/blankbutton.png" class="blankbutton" alt="blankbutton">
+<img src="assets/wiibubble.png" class="wiibubble" alt="wiibubble">
+<img src="assets/bottom.png" class="bottom" alt="bottom">
+
+<video id="safety" src="assets/wii-health-and-safety-warning.mp4" class="safety-warning" autoplay loop></video>
+<div id="safety-back" class="safety-back"></div>
+
+
+    </body>
+    <script src="js/index.js"></script>
+    <audio id="mySound" src="assets/hov.wav"/>
+    <audio id="clickSound" src="assets/clicked.wav"/>
+    <audio id="homeMusic" src="assets/wii-menu-music.mp3"/>
+</html>

@@ -1,0 +1,95 @@
+html {
+    background-color: #E4E4E4;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0px;
+}
+
+
+
+.empty-tile {
+    background: #D9D9D9;
+border: 0.3vw solid #B6B6B6;
+border-radius: 2vw;
+height: 9.3vw;
+width: 20vw;
+display: inline-block;
+background-image: url("../assets/empty.gif");
+}
+
+.empty-tile:hover {
+    background: #D9D9D9;
+    transform: scale(1.02);
+}
+
+.start-wrap {
+   margin-top: 8vh;
+   margin-left: 5vw;
+}
+
+.display-wrap {
+    margin-top: 1vh;
+    margin-left: 5vw;
+}
+
+.bottom {
+    width: 100vw;
+    margin-top: 2vh;
+    position: absolute;
+}
+
+.wiibubble {
+    position: absolute;
+    display: inline-block;
+    z-index: 100;
+    left: 2vw;
+    bottom: 3vh;
+    width: 10vw;
+    cursor: url("../assets/wii-grab.cur"), pointer;
+}
+
+.blankbutton {
+    position: absolute;
+    display: inline-block;
+    z-index: 100;
+    width: 9vw;
+    right: 2vw;
+    bottom: 3vh;
+    cursor: url("../assets/wii-grab.cur"), pointer;
+}
+
+html {
+    cursor: url("../assets/wii-pointer-blue.cur"), auto;
+}
+  
+  .empty-tile {
+    cursor: url("../assets/wii-grab.cur"), pointer;
+  }
+  
+  input {
+    cursor: url("../assets/wii-pointer-reverse.cur"), pointer;
+  }
+
+.safety-warning {
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    position: absolute;
+
+}
+
+.safety-back {
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    opacity: 0.5;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
