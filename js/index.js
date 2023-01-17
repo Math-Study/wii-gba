@@ -3,7 +3,8 @@ y.currentTime = 1;
 let backImage = "";
 let shortName = "";
 
-document.querySelector("#safety").addEventListener("click", () => {
+
+function startup() {
   var e = document.getElementById("safety");
   e.style.transition = "visibility 0s 2s, opacity 2s linear;";
   e.style.display = "none";
@@ -11,35 +12,26 @@ document.querySelector("#safety").addEventListener("click", () => {
   s.style.transition = "visibility 0s 2s, opacity 2s linear;";
   s.style.display = "none";
   PlayHomeSound("homeMusic");
+
+
+
   // Set Tile Icons
   var tile1 = document.getElementById("gba-tile");
-  tile1.style.backgroundImage = "url('assets/mgba.png')";
+  tile1.style.backgroundImage = "url('assets/smbwii.jpg')";
 
   var tile2 = document.getElementById("nes-tile");
   tile2.style.backgroundImage = "url('assets/nes-tile.webp')";
+
+
+
   window.scrollTo(0, 0);
+}
+
+document.querySelector("#safety").addEventListener("click", () => {
+  startup();
 });
 document.addEventListener("keypress", function (event) {
-  var x = event.key;
-  console.log("e");
-  if (x == "a" || x == "A") {
-    console.log("he");
-    var e = document.getElementById("safety");
-    e.style.transition = "visibility 0s 2s, opacity 2s linear;";
-    e.style.display = "none";
-    var s = document.getElementById("safety-back");
-    s.style.transition = "visibility 0s 2s, opacity 2s linear;";
-    s.style.display = "none";
-    PlayHomeSound("homeMusic");
-    window.scrollTo(0, 0);
-
-    // Set Tile Icons
-    var tile1 = document.getElementById("gba-tile");
-    tile1.style.backgroundImage = "url('assets/smbwii.jpg')";
-
-    var tile2 = document.getElementById("nes-tile");
-    tile2.style.backgroundImage = "url('assets/nes-tile.webp')";
-  }
+  startup();
 });
 
 function PlaySound(soundobj) {
