@@ -1,8 +1,11 @@
 @import url('https://fonts.cdnfonts.com/css/baloo-da');
+
 html {
     background-color: #E4E4E4;
     overflow-y: hidden;
     overflow-x: hidden;
+    background-image: url("../assets/mainbg.png");
+    background-repeat: repeat-x repeat-y;
 }
 
 body {
@@ -13,12 +16,13 @@ body {
 
 .empty-tile {
     background: #D9D9D9;
-border: 0.3vw solid #B6B6B6;
-border-radius: 2vw;
-height: 9.3vw;
-width: 20vw;
-display: inline-block;
-background-image: url("../assets/empty.gif");
+    border: 0.3vw solid #B6B6B6;
+    border-radius: 2vw;
+    height: 9.3vw;
+    width: 20vw;
+    display: inline-block;
+    transition: transform 0.2s;
+    background-image: url("../assets/empty.gif");
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -28,8 +32,8 @@ background-image: url("../assets/empty.gif");
     background-image: url("../assets/empty.gif");
     background-position: center;
     background-repeat: no-repeat;
-      position: absolute;
-      opacity: 0.75;
+    position: absolute;
+    opacity: 0.75;
 }
 
 .empty-tile:hover {
@@ -37,11 +41,14 @@ background-image: url("../assets/empty.gif");
     transform: scale(1.02);
     background-position: center;
     background-repeat: no-repeat;
+    outline: none;
+    border-color: #509fc6;
+    box-shadow: 0 0 10px #509fc6;
 }
 
 .start-wrap {
-   margin-top: 8vh;
-   margin-left: 5vw;
+    margin-top: 8vh;
+    margin-left: 5vw;
 }
 
 .display-wrap {
@@ -54,6 +61,7 @@ background-image: url("../assets/empty.gif");
     margin-top: 2vh;
     position: absolute;
 }
+
 
 .wiibubble {
     position: absolute;
@@ -78,14 +86,14 @@ background-image: url("../assets/empty.gif");
 html {
     cursor: url("../assets/wii-pointer-blue.cur"), auto;
 }
-  
-  .empty-tile {
+
+.empty-tile {
     cursor: url("../assets/wii-grab.cur"), pointer;
-  }
-  
-  a {
+}
+
+a {
     cursor: url("../assets/wii-pointer-reverse.cur"), pointer;
-  }
+}
 
 .safety-warning {
     width: 100vw;
@@ -113,14 +121,18 @@ html {
 
 /* Expand CODE */
 .expand {
-        width: 90vw;
-        height: 80vh;
-        position: absolute;
-        z-index: 999;
-        background: #D9D9D9;
-border: 0.3vw solid #0d53b1;
-border-radius: 2vw;
-display: inline-block;
+    width: 90vw;
+    height: 80vh;
+    position: absolute;
+    z-index: 999;
+    background: #D9D9D9;
+    border: 0.3vw solid #0d53b1;
+    border-radius: 2vw;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
 }
 
 .hidden {
@@ -129,9 +141,9 @@ display: inline-block;
 
 .gba-content {
     display: block;
-    position: absolute;
+    position: relative;
     padding: 5vh;
-    bottom: 5vh;
+    bottom: 10vh;
     left: 5vw;
 }
 
@@ -141,6 +153,7 @@ display: inline-block;
     text-decoration: none;
     font-family: 'Baloo Da';
     color: #313330;
+    z-index: 999;
 }
 
 .bubble-option:hover {
@@ -181,12 +194,35 @@ display: inline-block;
     text-decoration: none;
     font-family: 'Baloo Da';
     color: #313330;
+
 }
 
 .game-name {
     font-size: 5vw;
     font-family: 'Baloo Da';
-    color: #000000;
+    color: #2d2d2d;
     text-align: center;
     margin-bottom: 40vh;
+    text-shadow: 0.5vw 0.5vw 1vw #ffffff;
+}
+
+
+.nes-content {
+    display: block;
+    position: relative;
+    padding: 5vh;
+    bottom: 10vh;
+    left: 5vw;
+}
+
+
+.black-screen {
+    display: block;
+    width: 1000vw;
+    height: 1000vh;
+    background-color: #000000;
+    position: absolute;
+    z-index: 990;
+    top: 0;
+    left: 0;
 }
