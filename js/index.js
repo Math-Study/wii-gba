@@ -102,7 +102,7 @@ async function openAnimation(el) {
     document.querySelector("#" + el.id).classList.add("hidden");
       document.querySelector("#tile-content").classList.add("tile-content");
       document.querySelector("#black").classList.add("black-screen");
-      await sleep(900);
+      await sleep(800);
       document.querySelector("#tile-content").classList.add("fullscreen");
 
       StopSound("homeMusic");
@@ -112,7 +112,7 @@ async function openAnimation(el) {
 
 document.querySelector("#Wiimenu").addEventListener("click", () => {
   let lastTile = localStorage.getItem("lastTile");
-  document.querySelector("#tile-content").classList.add("fullscreen");
+  document.querySelector("#tile-content").classList.remove("fullscreen");
   document.querySelector("#tile-content").classList.remove("tile-content");
   document.querySelector("#black").classList.remove("black-screen");
   document.querySelector("#" + lastTile).classList.remove("hidden");
