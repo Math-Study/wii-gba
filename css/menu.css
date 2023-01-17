@@ -139,12 +139,24 @@ a {
     display: none;
 }
 
-.gba-content {
+.tile-content {
+    width: 90vw;
+    height: 80vh;
+    position: absolute;
+    z-index: 99999;
+    background: #D9D9D9;
+    border: 0.3vw solid #0d53b1;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
     display: block;
-    position: relative;
-    padding: 5vh;
-    bottom: 10vh;
-    left: 5vw;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    border: 0.7vw solid #B6B6B6;
+    border-radius: 3vw;
 }
 
 .option-1 {
@@ -157,34 +169,44 @@ a {
 }
 
 .bubble-option:hover {
-    transform: scale(1.1);
+    transform: scale(1.02);
 }
 
 .bubble-option-1:hover {
-    transform: scale(1.1);
+    transform: scale(1.02);
 }
 
 .bubble-option {
-    border-radius: 5vh;
-    outline: #0d53b1;
     outline-width: 10vw;
-    background-color: #9fa5ab;
     width: 30vw;
     height: 5vw;
     text-align: center;
     display: inline-block;
-    margin-right: 15vw;
+    margin-left: 14vw;
+    margin-top: 5vh;
+
+    background: #FEFDFF;
+    border: 1vh solid #9FBABD;
+    border-radius: 12vw;
 }
 
 .bubble-option-1 {
-    border-radius: 5vh;
-    outline: #0d53b1;
     outline-width: 10vw;
-    background-color: #9fa5ab;
     width: 30vw;
     height: 5vw;
     text-align: center;
     display: inline-block;
+
+    background: #FEFDFF;
+    border: 1vh solid #9FBABD;
+    border-radius: 12vw;
+}
+
+.wiiMenu {
+    margin-top: 60vh;
+    background: url(../assets/mainbg.png), #D9D9D9;
+    border-radius: 10vw;
+    height: 20vh;
 }
 
 

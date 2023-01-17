@@ -15,25 +15,9 @@
     <body>
 
 <div class="start-wrap" id="startW">
-    <div class="empty-tile" id="gba-tile">
-    <div id="gba-content" class="hidden">
-        <h1 class="game-name">Gameboy Advanced Emulator</h1>
+    <div class="empty-tile" id="gba-tile"></div>
 
-
-        <div id="Wiimenu" class="bubble-option"><a href="" class="option-1">Wii Menu</a></div>
-        <div class="bubble-option-1"><a class="option-2" href="gba.html">Start GBA</a></div>
-    </div>
-</div>
-
-    <div class="empty-tile" id="nes-tile">
-    <div id="nes-content" class="hidden">
-        <h1 class="game-name">Nintendo Entertainment System</h1>
-
-
-        <div id="Wiimenu" class="bubble-option"><a href="" class="option-1">Wii Menu</a></div>
-        <div class="bubble-option-1"><a class="option-2" href="nes.html">Start Nes</a></div>
-    </div>
-</div>
+    <div class="empty-tile" id="nes-tile"></div>
     <div class="empty-tile"></div>
     <div class="empty-tile"></div>
 </div>
@@ -61,6 +45,18 @@
 <video id="safety" src="assets/wii-health-and-safety-warning.mp4" class="safety-warning" autoplay loop></video>
 <div id="safety-back" class="safety-back"></div>
 
+
+
+<div id="tile-content" class="hidden">
+    
+
+
+<div class="wiiMenu">
+    <div id="Wiimenu" class="bubble-option"><a href="" class="option-1">Wii Menu</a></div>
+    <div class="bubble-option-1"><a class="option-2" id="StartText" href="gba.html">Start GBA</a></div>
+</div>
+    
+</div>
 
     </body>
     <script src="js/index.js"></script>

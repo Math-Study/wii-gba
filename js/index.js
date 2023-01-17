@@ -1,6 +1,7 @@
 var y = document.getElementById("safety");
 y.currentTime = 1;
-
+let backImage = "";
+let shortName = "";
 
 document.querySelector("#safety").addEventListener("click", () => {
   var e = document.getElementById("safety");
@@ -49,7 +50,7 @@ function PlaySound(soundobj) {
 
 function PlayHomeSound(soundobj) {
   var thissound = document.getElementById(soundobj);
-  thissound.volume = 0.4;
+  thissound.volume = 1;
   thissound.play();
 }
 
@@ -72,19 +73,31 @@ window.onload = function() {
   }
 }
 
-// Needs Fixing to be Dynamic based on tile clicked?
-document.querySelector("#gba-tile").addEventListener("click", () => {
-  document.querySelector("#gba-tile").classList.add("expand");
-  document.querySelector("#gba-content").classList.add("gba-content");
-  document.querySelector("#gba-tile").classList.remove("empty-tile");
-  document.querySelector("#black").classList.add("black-screen");
-});
 
-document.querySelector("#nes-tile").addEventListener("click", () => {
-  document.querySelector("#nes-tile").classList.add("expand");
-  document.querySelector("#nes-content").classList.add("nes-content");
-  document.querySelector("#nes-tile").classList.remove("empty-tile");
-  document.querySelector("#black").classList.add("black-screen");
+document.querySelectorAll('.empty-tile').forEach(function(el){
+  el.addEventListener('click', function() {
+    document.querySelector("#" + this.id).classList.add("hidden");
+    document.querySelector("#" + this.id).classList.remove("empty-tile");
+    document.querySelector("#tile-content").classList.add("tile-content");
+    document.querySelector("#black").classList.add("black-screen");
+
+    if (this.id == "gba-tile") {
+      backImage = "../assets/nsmbwii.jpg";
+      shortName = "GBA";
+    }
+
+    if (this.id == "nes-tile") {
+      backImage = "../assets/nes-tile.webp";
+      shortName = "NES";
+    }
+
+
+
+
+    // Add tiles ABOVE HERE!!
+    document.querySelector("#tile-content").style.backgroundImage = "url('" + backImage + "')";
+    document.querySelector("#StartText").innerHTML = "Start " + shortName;
+  });
 });
 
 document.querySelector("#Wiimenu").addEventListener("click", () => {
