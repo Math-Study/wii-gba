@@ -35,7 +35,7 @@ document.addEventListener("keypress", function (event) {
 
     // Set Tile Icons
     var tile1 = document.getElementById("gba-tile");
-    tile1.style.backgroundImage = "url('assets/mgba.png')";
+    tile1.style.backgroundImage = "url('assets/smbwii.jpg')";
 
     var tile2 = document.getElementById("nes-tile");
     tile2.style.backgroundImage = "url('assets/nes-tile.webp')";

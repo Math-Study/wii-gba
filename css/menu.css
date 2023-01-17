@@ -23,15 +23,17 @@ body {
     display: inline-block;
     transition: transform 0.2s;
     background-image: url("../assets/empty.gif");
-    background-position: center;
+    background-position:center;
     background-repeat: no-repeat;
+    background-size:100% 100%;
 }
 
 .empty-tile::before {
     content: "";
     background-image: url("../assets/empty.gif");
-    background-position: center;
+    background-position:center;
     background-repeat: no-repeat;
+    background-size:100% 100%;
     position: absolute;
     opacity: 0.75;
 }
@@ -39,8 +41,9 @@ body {
 .empty-tile:hover {
     background: #D9D9D9;
     transform: scale(1.02);
-    background-position: center;
+    background-position:center;
     background-repeat: no-repeat;
+    background-size:100% 100%;
     outline: none;
     border-color: #509fc6;
     box-shadow: 0 0 10px #509fc6;
