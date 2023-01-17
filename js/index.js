@@ -112,9 +112,11 @@ async function openAnimation(el) {
 
 document.querySelector("#Wiimenu").addEventListener("click", () => {
   let lastTile = localStorage.getItem("lastTile");
+  document.querySelector("#tile-content").classList.add("fullscreen");
   document.querySelector("#tile-content").classList.remove("tile-content");
   document.querySelector("#black").classList.remove("black-screen");
   document.querySelector("#" + lastTile).classList.remove("hidden");
+  document.querySelector("#" + lastTile).classList.remove("fullscreen");
 
   StopSound("smbMusic");
   StopSound("homeMusic");
