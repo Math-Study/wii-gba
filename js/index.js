@@ -2,16 +2,19 @@ var y = document.getElementById("safety");
 y.currentTime = 1;
 let backImage = "";
 let shortName = "";
-let link = "";
+let link = ""
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 
 function startup() {
-  var e = document.getElementById("safety");
-  e.style.transition = "visibility 0s 2s, opacity 2s linear;";
-  e.style.display = "none";
-  var s = document.getElementById("safety-back");
-  s.style.transition = "visibility 0s 2s, opacity 2s linear;";
-  s.style.display = "none";
+  setTimeout(function() {
+    var e = document.getElementById("safety");
+    e.style.transition = '.7s';
+    e.style.opacity = '0';
+    e.style.visibility = 'hidden';
+  }, 0);
   PlayHomeSound("homeMusic");
 
 
@@ -43,7 +46,7 @@ function PlaySound(soundobj) {
 
 function PlayHomeSound(soundobj) {
   var thissound = document.getElementById(soundobj);
-  thissound.volume = 1;
+  thissound.volume = 0.5;
   thissound.play();
 }
 
@@ -69,9 +72,8 @@ window.onload = function() {
 
 document.querySelectorAll('.empty-tile').forEach(function(el){
   el.addEventListener('click', function() {
-    document.querySelector("#" + this.id).classList.add("hidden");
-    document.querySelector("#tile-content").classList.add("tile-content");
-    document.querySelector("#black").classList.add("black-screen");
+
+    openAnimation(this);
 
     if (this.id == "gba-tile") {
       backImage = "../assets/nsmbwii.jpg";
@@ -94,10 +96,27 @@ document.querySelectorAll('.empty-tile').forEach(function(el){
   });
 });
 
+async function openAnimation(el) {
+  document.querySelector("#" + el.id).classList.add("fullscreen");
+    await sleep(1000);
+    document.querySelector("#" + el.id).classList.add("hidden");
+      document.querySelector("#tile-content").classList.add("tile-content");
+      document.querySelector("#black").classList.add("black-screen");
+      await sleep(900);
+      document.querySelector("#tile-content").classList.add("fullscreen");
+
+      StopSound("homeMusic");
+      PlayHomeSound("smbMusic");
+
+}
+
 document.querySelector("#Wiimenu").addEventListener("click", () => {
   let lastTile = localStorage.getItem("lastTile");
   document.querySelector("#tile-content").classList.remove("tile-content");
   document.querySelector("#black").classList.remove("black-screen");
   document.querySelector("#" + lastTile).classList.remove("hidden");
 
+  StopSound("smbMusic");
+  StopSound("homeMusic");
+  PlayHomeSound("homeMusic");
 });
