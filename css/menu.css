@@ -88,7 +88,7 @@ body {
     left: 2vw;
     bottom: 3vh;
     width: 10vw;
-    cursor: url("../assets/wii-grab.cur"), pointer;
+    cursor: url("../assets/wii-help-ccw.cur"), pointer;
 }
 
 .blankbutton {
@@ -98,19 +98,19 @@ body {
     width: 9vw;
     right: 2vw;
     bottom: 3vh;
-    cursor: url("../assets/wii-grab.cur"), pointer;
+    cursor: url("../assets/wii-help-ccw.cur"), pointer;
 }
 
 html {
-    cursor: url("../assets/wii-pointer-blue.cur"), auto;
+    cursor: url("../assets/wii-pointer-ccw.cur"), auto;
 }
 
 .empty-tile {
-    cursor: url("../assets/wii-pointer-blue.cur"), pointer;
+    cursor: url("../assets/wii-pointer-ccw.cur"), pointer;
 }
 
 a {
-    cursor: url("../assets/wii-pointer.cur"), pointer; 
+    cursor: url("../assets/wii-pointer-blue-ccw.cur"), pointer; 
 }
 
 .safety-warning {
@@ -122,6 +122,7 @@ a {
     position: absolute;
     opacity: 1;
     background-color: black;
+    cursor: url("../assets/wii-pointer-ccw.cur"), pointer;
     
 }
 
@@ -211,10 +212,14 @@ a {
 
 .bubble-option:hover {
     transform: scale(1.02);
+    cursor: url("../assets/wii-pointer-blue-ccw.cur"), pointer; 
+
 }
 
 .bubble-option-1:hover {
     transform: scale(1.02);
+    cursor: url("../assets/wii-pointer-blue-ccw.cur"), pointer; 
+
 }
 
 .bubble-option {
