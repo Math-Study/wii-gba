@@ -1,4 +1,8 @@
-@import url('https://fonts.cdnfonts.com/css/baloo-da');
+/* @import url('https://fonts.cdnfonts.com/css/baloo-da'); */
+@import url(../assets/contl.ttf);
+@import url(../assets/contb.ttf);
+@import url(../assets/contm.ttf);
+
 
 html {
     background-color: #E4E4E4;
@@ -205,7 +209,8 @@ a {
 .option-1 {
     font-size: 3vw;
     text-decoration: none;
-    font-family: 'Baloo Da';
+    /* font-family: 'Baloo Da'; */
+    font-family: 'Continuum';
     color: #313330;
     z-index: 999;
 }
@@ -259,14 +264,16 @@ a {
 .option-2 {
     font-size: 3vw;
     text-decoration: none;
-    font-family: 'Baloo Da';
+    /* font-family: 'Baloo Da'; */
+    font-family: 'Continuum';
     color: #313330;
 
 }
 
 .game-name {
     font-size: 5vw;
-    font-family: 'Baloo Da';
+    /* font-family: 'Baloo Da'; */
+    font-family: 'Continuum';
     color: #2d2d2d;
     text-align: center;
     margin-bottom: 40vh;
