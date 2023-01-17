@@ -106,7 +106,7 @@ async function openAnimation(el) {
       document.querySelector("#tile-content").classList.add("fullscreen");
 
       StopSound("homeMusic");
-      PlayHomeSound("smbMusic");
+      PlayHomeSound("smbMusicIntro");
 
 }
 
