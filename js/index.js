@@ -2,6 +2,7 @@ var y = document.getElementById("safety");
 y.currentTime = 1;
 let backImage = "";
 let shortName = "";
+let link = "";
 
 
 function startup() {
@@ -69,29 +70,34 @@ window.onload = function() {
 document.querySelectorAll('.empty-tile').forEach(function(el){
   el.addEventListener('click', function() {
     document.querySelector("#" + this.id).classList.add("hidden");
-    document.querySelector("#" + this.id).classList.remove("empty-tile");
     document.querySelector("#tile-content").classList.add("tile-content");
     document.querySelector("#black").classList.add("black-screen");
 
     if (this.id == "gba-tile") {
       backImage = "../assets/nsmbwii.jpg";
       shortName = "GBA";
+      link = "gba.html";
     }
 
     if (this.id == "nes-tile") {
       backImage = "../assets/nes-tile.webp";
       shortName = "NES";
+      link = "nes.html";
     }
 
-
+    let lastTile = localStorage.setItem("lastTile", this.id);
 
 
     // Add tiles ABOVE HERE!!
     document.querySelector("#tile-content").style.backgroundImage = "url('" + backImage + "')";
+    document.querySelector("#StartText").href = link;
   });
 });
 
 document.querySelector("#Wiimenu").addEventListener("click", () => {
-  console.log("hehe");
-  // Add closing code here for whatever tile they on (Rn it just reloads page to reset)
+  let lastTile = localStorage.getItem("lastTile");
+  document.querySelector("#tile-content").classList.remove("tile-content");
+  document.querySelector("#black").classList.remove("black-screen");
+  document.querySelector("#" + lastTile).classList.remove("hidden");
+
 });
