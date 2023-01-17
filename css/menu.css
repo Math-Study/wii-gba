@@ -91,11 +91,11 @@ html {
 }
 
 .empty-tile {
-    cursor: url("../assets/wii-grab.cur"), pointer;
+    cursor: url("../assets/wii-pointer-blue.cur"), pointer;
 }
 
 a {
-    cursor: url("../assets/wii-pointer-reverse.cur"), pointer;
+    cursor: url("../assets/wii-pointer.cur"), pointer; 
 }
 
 .safety-warning {
@@ -163,7 +163,6 @@ a {
 }
 
 .option-1 {
-    padding: 5vw;
     font-size: 3vw;
     text-decoration: none;
     font-family: 'Baloo Da';
@@ -214,7 +213,6 @@ a {
 
 
 .option-2 {
-    padding: 5vw;
     font-size: 3vw;
     text-decoration: none;
     font-family: 'Baloo Da';
