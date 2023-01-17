@@ -88,7 +88,6 @@ document.querySelectorAll('.empty-tile').forEach(function(el){
 
     // Add tiles ABOVE HERE!!
     document.querySelector("#tile-content").style.backgroundImage = "url('" + backImage + "')";
-    document.querySelector("#StartText").innerHTML = "Start " + shortName;
   });
 });
 
