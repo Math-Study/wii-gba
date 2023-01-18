@@ -82,25 +82,25 @@ document.querySelectorAll('.empty-tile').forEach(function(el){
     openAnimation(this);
 
     if (this.id == "gba-tile") {
-      backImage = "../assets/nsmbwii.jpg";
+      backImage = "assets/nsmbwii.jpg";
       shortName = "GBA";
       link = "gba.html";
     }
 
     if (this.id == "nes-tile") {
-      backImage = "../assets/nes-tile.webp";
+      backImage = "assets/nes-tile.webp";
       shortName = "NES";
       link = "nes.html";
     }
 
     if (this.id == "wii-tile") {
-      backImage = "../assets/nsmbwii.jpg";
+      backImage = "assets/nsmbwii.jpg";
       shortName = "GBA";
       link = "gba.html";
     }
 
     if (this.id == "snes-tile") {
-      backImage = "../assets/nsmbwii.jpg";
+      backImage = "assets/nsmbwii.jpg";
       shortName = "GBA";
       link = "gba.html";
     }
