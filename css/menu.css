@@ -7,11 +7,17 @@
 html {
     background-color: #E4E4E4;
     overflow-y: hidden;
-    overflow-x: hidden;
     background-image: url("../assets/mainbg.png");
     background-repeat: repeat-x repeat-y;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    scroll-behavior: smooth;
 }
 
+
+html::-webkit-scrollbar {
+    display: none;
+}
 body {
     margin: 0px;
 }
@@ -81,7 +87,7 @@ body {
 .bottom {
     width: 100vw;
     margin-top: 2vh;
-    position: absolute;
+    position: relative;
 }
 
 
@@ -90,7 +96,7 @@ body {
     display: inline-block;
     z-index: 100;
     left: 2vw;
-    bottom: 3vh;
+    bottom: 1vh;
     width: 10vw;
     cursor: url("../assets/wii-help-ccw.cur"), pointer;
 }
@@ -101,8 +107,19 @@ body {
     z-index: 100;
     width: 9vw;
     right: 2vw;
-    bottom: 3vh;
-    cursor: url("../assets/wii-help-ccw.cur"), pointer;
+    bottom: 1vh;
+    cursor: pointer;
+}
+
+.arrow {
+    position: absolute;
+    display: inline-block;
+    z-index: 100;
+    width: 5vw;
+    height: auto;
+    right: 2vw;
+    bottom: 50vh;
+    cursor: url("../assets/wii-pointer-blue-ccw.cur"), pointer;
 }
 
 html {
@@ -300,3 +317,53 @@ a {
     top: 0;
     left: 0;
 }
+
+
+
+
+
+/* Multiple Pages Horiz */
+
+
+.slide {
+    width: 88vw;
+    height: 100vh;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 200vw;
+   
+  }
+  .one {
+  }
+  .two {
+  }
+  .three {
+  }
+  .four {
+  }
+  
+  .top-right {
+    position:absolute;
+    top:0;
+    right:-80vw;
+  }
+
+.teleport {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    height: 27vh;
+  }

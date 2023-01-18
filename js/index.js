@@ -8,6 +8,7 @@ function sleep(ms) {
 }
 
 
+
 function startup() {
   setTimeout(function() {
     var e = document.getElementById("safety");
@@ -26,6 +27,11 @@ function startup() {
   var tile2 = document.getElementById("nes-tile");
   tile2.style.backgroundImage = "url('assets/nes-tile.webp')";
 
+  var tile3 = document.getElementById("snes-tile");
+  tile3.style.backgroundImage = "url('assets/nes-tile.webp')";
+
+  var tile4 = document.getElementById("wii-tile");
+  tile4.style.backgroundImage = "url('assets/smbwii.jpg')";
 
 
   window.scrollTo(0, 0);
@@ -87,6 +93,18 @@ document.querySelectorAll('.empty-tile').forEach(function(el){
       link = "nes.html";
     }
 
+    if (this.id == "wii-tile") {
+      backImage = "../assets/nsmbwii.jpg";
+      shortName = "GBA";
+      link = "gba.html";
+    }
+
+    if (this.id == "snes-tile") {
+      backImage = "../assets/nsmbwii.jpg";
+      shortName = "GBA";
+      link = "gba.html";
+    }
+
     let lastTile = localStorage.setItem("lastTile", this.id);
 
 
@@ -98,6 +116,7 @@ document.querySelectorAll('.empty-tile').forEach(function(el){
 
 async function openAnimation(el) {
   document.querySelector("#" + el.id).classList.add("fullscreen");
+  window.scrollTo(0, 0);
     await sleep(1000);
     document.querySelector("#" + el.id).classList.add("hidden");
       document.querySelector("#tile-content").classList.add("tile-content");
@@ -118,7 +137,46 @@ document.querySelector("#Wiimenu").addEventListener("click", () => {
   document.querySelector("#" + lastTile).classList.remove("hidden");
   document.querySelector("#" + lastTile).classList.remove("fullscreen");
 
-  StopSound("smbMusic");
+  StopSound("smbMusicIntro");
   StopSound("homeMusic");
   PlayHomeSound("homeMusic");
+});
+
+document.querySelector("#arrow-right").addEventListener("click", () => {
+document.querySelector("#arrow-right").classList.add("hidden");
+document.querySelector("#arrow-left").classList.remove("hidden");
+});
+
+document.querySelector("#arrow-left").addEventListener("click", () => {
+  document.querySelector("#arrow-left").classList.add("hidden");
+  document.querySelector("#arrow-right").classList.remove("hidden");
+  });
+
+//661.9875183105469, 168.47500228881836,
+//58.36249923706055, 432.5500183105469,
+
+
+
+
+
+// Thanks z3r0 
+//Get all the hyperlink elements
+var links = document.getElementsByTagName("a");
+
+//Browse the previously created array
+Array.prototype.forEach.call(links, function(elem, index) {
+  //Get the hyperlink target and if it refers to an id go inside condition
+  var elemAttr = elem.getAttribute("href");
+  if(elemAttr && elemAttr.includes("#")) {
+    //Replace the regular action with a scrolling to target on click
+    elem.addEventListener("click", function(ev) {
+      ev.preventDefault();
+      //Scroll to the target element using replace() and regex to find the href's target id
+      document.getElementById(elemAttr.replace(/#/g, "")).scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+          inline: "nearest"
+          });
+    });
+  }
 });

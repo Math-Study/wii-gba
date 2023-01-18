@@ -13,7 +13,10 @@
 
 
     <body>
-
+<div id="teleport" class="teleport"></div>
+<div class="wrapper">
+<!-- Start Page 1 -->
+<div class="slide one">
 <div class="start-wrap" id="startW">
     <div class="empty-tile" id="gba-tile"></div>
 
@@ -35,12 +38,49 @@
     <div class="empty-tile"></div>
     <div class="empty-tile"></div>
 </div>
+<a href="#scroll" id="arrow-right"><img src="assets/rightarrow.png"class="arrow" alt="arrow"></a>
+<!-- End Page 1 -->
+</div>
+
+
+
+<!-- Start Page 2 -->
+<div class="slide two" id="p2">
+    <div class="start-wrap" id="startW">
+        <div class="empty-tile" id="wii-tile"></div>
+    
+        <div class="empty-tile" id="snes-tile"></div>
+        <div class="empty-tile"></div>
+        <div class="empty-tile"></div>
+    </div>
+    
+    <div class="display-wrap">
+    <div class="empty-tile"></div>
+    <div class="empty-tile"></div>
+    <div class="empty-tile"></div>
+    <div class="empty-tile"></div>
+    </div>
+    
+    <div class="display-wrap">
+        <div class="empty-tile"></div>
+        <div class="empty-tile"></div>
+        <div class="empty-tile"></div>
+        <div class="empty-tile"></div>
+    </div>
+    <a href="#teleport"> <img src="assets/leftarrow.png"class="arrow hidden" alt="arrow" id="arrow-left"> </a>
+
+<div class="top-right" id="scroll"></div>
+
+</div>
+<!-- End Page 2 -->
+
+
+
+
 
 <div id="black" class="hidden"></div>
 
-<img src="assets/blankbutton.png" class="blankbutton" alt="blankbutton">
-<img src="assets/wiibubble.png" class="wiibubble" alt="wiibubble">
-<img src="assets/bottom.png" class="bottom" alt="bottom">
+
 
 <video id="safety" src="assets/wii-health-and-safety-warning.mp4" class="safety-warning" autoplay loop></video>
 
@@ -54,9 +94,14 @@
     <div id="Wiimenu" class="bubble-option"><a href="#" class="option-1">Wii Menu</a></div>
     <div class="bubble-option-1"><a class="option-2" id="StartText" href="gba.html">Start</a></div>
 </div>
-    
 </div>
 
+
+<div class="footer">
+    <img src="assets/blankbutton.png" class="blankbutton" alt="blankbutton">
+    <img src="assets/wiibubble.png" class="wiibubble" alt="wiibubble">
+    <img src="assets/bottom.png" class="bottom" alt="bottom">
+</div>
     </body>
     <script src="js/index.js"></script>
     <audio id="mySound" src="assets/hov.wav"/>
