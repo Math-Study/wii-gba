@@ -122,6 +122,17 @@ body {
     cursor: url("../assets/wii-pointer-blue-ccw.cur"), pointer;
 }
 
+.arrow2 {
+    position: absolute;
+    display: inline-block;
+    z-index: 100;
+    width: 5vw;
+    height: auto;
+    left: 2vw;
+    bottom: 50vh;
+    cursor: url("../assets/wii-pointer-blue-ccw.cur"), pointer;
+}
+
 html {
     cursor: url("../assets/wii-pointer-ccw.cur"), auto;
 }
@@ -187,7 +198,7 @@ a {
 
 .tile-content.fullscreen {
     width: 90vw;
-    height: 80vh;
+    height: 90vh;
     position: absolute;
     z-index: 99999;
     top: 50%;
@@ -206,7 +217,7 @@ a {
     transform: translateY(-90%);
     left: 50%;
     transform: translateX(-50%);
-    height: 70vh;
+    height: 80vh;
     width: 50vw;
     background: #D9D9D9;
     border: 0.3vw solid #0d53b1;
@@ -226,8 +237,8 @@ a {
 .option-1 {
     font-size: 3vw;
     text-decoration: none;
-    /* font-family: 'Baloo Da'; */
-    font-family: 'Continuum';
+     font-family: 'Baloo Da'; 
+   /* font-family: 'Continuum'; */
     color: #313330;
     z-index: 999;
 }
@@ -247,7 +258,7 @@ a {
 .bubble-option {
     outline-width: 10vw;
     width: 30vw;
-    height: 5vw;
+    height: 4vw;
     text-align: center;
     display: inline-block;
     margin-left: 14vw;
@@ -256,24 +267,28 @@ a {
     background: #FEFDFF;
     border: 1vh solid #9FBABD;
     border-radius: 12vw;
+    border-color: #509fc6;
+    box-shadow: 0 0 10px #509fc6;
 }
 
 .bubble-option-1 {
     outline-width: 10vw;
     width: 30vw;
-    height: 5vw;
+    height: 4vw;
     text-align: center;
     display: inline-block;
 
     background: #FEFDFF;
     border: 1vh solid #9FBABD;
     border-radius: 12vw;
+    border-color: #509fc6;
+    box-shadow: 0 0 10px #509fc6;
 }
 
 .wiiMenu {
-    margin-top: 60vh;
+    margin-top: 70vh;
     background: url(../assets/mainbg.png), #D9D9D9;
-    border-radius: 10vw;
+    border-radius:2.2vw;
     height: 20vh;
 }
 
@@ -281,16 +296,15 @@ a {
 .option-2 {
     font-size: 3vw;
     text-decoration: none;
-    /* font-family: 'Baloo Da'; */
-    font-family: 'Continuum';
+    font-family: 'Baloo Da';
+   /* font-family: 'Continuum'; */
     color: #313330;
-
 }
 
 .game-name {
     font-size: 5vw;
-    /* font-family: 'Baloo Da'; */
-    font-family: 'Continuum';
+    font-family: 'Baloo Da';
+   /* font-family: 'Continuum'; */
     color: #2d2d2d;
     text-align: center;
     margin-bottom: 40vh;
@@ -326,7 +340,7 @@ a {
 
 
 .slide {
-    width: 88vw;
+    width: 90vw;
     height: 100vh;
   }
   .wrapper {

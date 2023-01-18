@@ -145,11 +145,17 @@ document.querySelector("#Wiimenu").addEventListener("click", () => {
 document.querySelector("#arrow-right").addEventListener("click", () => {
 document.querySelector("#arrow-right").classList.add("hidden");
 document.querySelector("#arrow-left").classList.remove("hidden");
+
+//document.querySelector("#arrow-left2").classList.remove("hidden");
+//document.querySelector("#arrow-right2").classList.add("hidden");
 });
 
 document.querySelector("#arrow-left").addEventListener("click", () => {
   document.querySelector("#arrow-left").classList.add("hidden");
   document.querySelector("#arrow-right").classList.remove("hidden");
+
+  //document.querySelector("#arrow-left2").classList.add("hidden");
+ // document.querySelector("#arrow-right2").classList.remove("hidden");
   });
 
 //661.9875183105469, 168.47500228881836,
