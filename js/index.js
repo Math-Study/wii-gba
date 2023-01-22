@@ -103,8 +103,10 @@ document.querySelectorAll('.empty-tile').forEach(function(el){
       backImage = "assets/nsmbds.jpg";
       shortName = "Nds";
       link = "launchpad.html";
+      coreName = 'nds'
       let gameFile = "New_Super_Mario_Bros._(USA)"
       localStorage.setItem("fileName", gameFile);
+      localStorage.setItem("coreName", coreName);
     }
 
     let lastTile = localStorage.setItem("lastTile", this.id);
