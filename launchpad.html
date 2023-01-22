@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Welcome </title>
+        <link rel="stylesheet" href="css/play.css">
+    </head>
+
+    <body>
+        <style>
+            body, html {
+                height: 100%;
+            }
+
+            body {
+                font-family: monospace;
+                font-weight: bold;
+                font-size: 20px;
+                margin: 0;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="gameplayer-2">
+            <div id='game'></div>
+        </div>
+        
+        <script src="data/js/load.js"></script>
+        <script type='text/javascript'>
+        
+            EJS_player = '#game';
+            EJS_core = gameCore;
+        
+            // URL to Bios file
+        
+            EJS_biosUrl = fileName;
+            
+            // URL to Game rom
+             
+            EJS_gameUrl = fileName;
+            
+            /*
+             *  Path to the WASM / JS files
+             *  HAS TO BE in the same directory.
+             */
+            EJS_DEBUG_XX = true;
+            EJS_pathtodata = 'data/';
+            
+        </script>
+        <script src='data/loader.js'></script>
+    </body>
+    
+</html>

@@ -100,9 +100,11 @@ document.querySelectorAll('.empty-tile').forEach(function(el){
     }
 
     if (this.id == "snes-tile") {
-      backImage = "assets/nsmbwii.jpg";
-      shortName = "GBA";
-      link = "gba.html";
+      backImage = "assets/nsmbds.jpg";
+      shortName = "Nds";
+      link = "launchpad.html";
+      let gameFile = "New_Super_Mario_Bros._(USA)"
+      localStorage.setItem("fileName", gameFile);
     }
 
     let lastTile = localStorage.setItem("lastTile", this.id);
