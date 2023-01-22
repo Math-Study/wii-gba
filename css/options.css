@@ -1,0 +1,87 @@
+@import url(../assets/contb.ttf);
+@import url('https://fonts.cdnfonts.com/css/baloo-da');
+
+html {
+    background-image: url("../assets/wii-options.png");
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.settings {
+    font-family: 'Baloo Da';
+font-style: normal;
+font-size: 7vw;
+align-items: center;
+text-align: center;
+color: #FFFFFF;
+display: inline-block;
+}
+
+.center {
+    text-align: center;
+    align-items: center;
+}
+
+
+.setting-line {
+    margin: 0;
+    border: 1vh solid #FFFFFF;
+}
+
+.setting-line-2 {
+    margin-top: 5vh;
+    border: 1vh solid #FFFFFF;
+}
+
+.tile {
+    margin-top: 5vh;
+    display: inline-block;
+    background: #FFFFFF;
+    border: 0.6vh solid #000000;
+    box-shadow: 2vh 1vh 1vh -3px rgba(49, 46, 46, 0.25);
+    border-radius: 1.2vw;
+    height: 10vh;
+    width: 50vw;
+}
+
+.tile:hover {
+    background: #F2F2F2;
+    cursor: url("../assets/wii-pointer-blue-ccw.cur"), pointer;
+    transform: scale(1.02);
+}
+
+.tile-2:hover {
+    background: #F2F2F2;
+    cursor: url("../assets/wii-pointer-blue-ccw.cur"), pointer;
+    transform: scale(1.05);
+}
+
+.tile-2 {
+    text-align: center;
+    margin-top: 5vh;
+    display: inline-block;
+    background: #FFFFFF;
+    border: 0.6vh solid #000000;
+    box-shadow: 2vh 1vh 1vh -3px rgba(49, 46, 46, 0.25);
+    border-radius: 1.2vw;
+    height: 10vh;
+    width: 50vw;
+}
+
+.tile-text {
+    display: inline-block;
+    font-family: 'Baloo Da';
+    font-style: normal;
+    font-size: 7vh;
+    padding: 0vh;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}

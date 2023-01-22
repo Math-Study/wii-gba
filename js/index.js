@@ -22,7 +22,7 @@ function startup() {
 
   // Set Tile Icons
   var tile1 = document.getElementById("gba-tile");
-  tile1.style.backgroundImage = "url('assets/smbwii.jpg')";
+  tile1.style.backgroundImage = "url('assets/nsmbdsf.jpg')";
 
   var tile2 = document.getElementById("nes-tile");
   tile2.style.backgroundImage = "url('assets/nes-tile.webp')";
@@ -82,9 +82,13 @@ document.querySelectorAll('.empty-tile').forEach(function(el){
     openAnimation(this);
 
     if (this.id == "gba-tile") {
-      backImage = "assets/nsmbwii.jpg";
-      shortName = "GBA";
-      link = "gba.html";
+      backImage = "assets/nsmbds.jpg";
+      shortName = "Nds";
+      link = "launchpad.html";
+      coreName = 'nds'
+      let gameFile = "New_Super_Mario_Bros._(USA)"
+      localStorage.setItem("fileName", gameFile);
+      localStorage.setItem("coreName", coreName);
     }
 
     if (this.id == "nes-tile") {

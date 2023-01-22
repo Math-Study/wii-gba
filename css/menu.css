@@ -101,6 +101,10 @@ body {
     cursor: url("../assets/wii-help-ccw.cur"), pointer;
 }
 
+.wiibubble:hover {
+    transform: scale(1.05);
+}
+
 .blankbutton {
     position: absolute;
     display: inline-block;
@@ -109,6 +113,10 @@ body {
     right: 2vw;
     bottom: 1vh;
     cursor: pointer;
+}
+
+.blankbutton:hover {
+    transform: scale(1.05);
 }
 
 .arrow {
