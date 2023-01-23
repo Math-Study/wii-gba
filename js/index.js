@@ -98,6 +98,7 @@ document.querySelectorAll('.empty-tile').forEach(function(el){
     var boxImage = localStorage.getItem("box" + id + "-image");
     var boxCore = localStorage.getItem("box" + id + "-core");
     var boxLinkType = localStorage.getItem("box" + id + "-linkType");
+    var romLocation = localStorage.getItem("box" + id + "-rom");
 
     if (boxLink == null) {
       document.querySelector("#StartText").href = "404.html";
@@ -109,8 +110,13 @@ document.querySelectorAll('.empty-tile').forEach(function(el){
 
     if (boxCore == null) {
       coreName = 'nds'
-    } else if (boxLinkType == "emu") { 
+      localStorage.setItem("coreName", coreName);
+      console.log(coreName);
+    } 
+    if (boxLinkType == "emu") { 
       coreName = boxCore
+      localStorage.setItem("coreName", coreName);
+      console.log(coreName);
     }
     if (boxImage == null) {
       document.querySelector("#tile-content").style.backgroundImage = "url('assets/nsmbds.jpg')";
@@ -118,7 +124,15 @@ document.querySelectorAll('.empty-tile').forEach(function(el){
       document.querySelector("#tile-content").style.backgroundImage = "url('" + boxImage + "')";
     }
     
-    
+    if (romLocation == null) {
+
+    } else if (romLocation == true) {
+      localStorage.setItem("internal", 'true');
+      localStorage.setItem("fileName", boxLink);
+    } else if (romLocation == false) {
+      localStorage.setItem("internal", 'false');
+      localStorage.setItem("fileName", boxLink);
+    }
 
 
 

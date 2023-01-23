@@ -13,6 +13,7 @@
         <div class="drop-targets">
             <h1>Tile Editor</h1>
             <p>Please Select the tile you'd like to manage</p>
+            <a class="goHome" href="index.html">Go Back Home</a>
             <div class="slide one">
             <div class="box" id="box5">
                 <div class="item" id="item">
@@ -60,6 +61,16 @@
         <span class="checkmark"></span>
       </label>
     <br>
+    <h3>Rom Location</h3>
+    <label class="container-1">Internal (Pull Roms from us)
+      <input type="radio" name="location" id="internal">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container-1">External (Give your own Rom Link)
+      <input type="radio" name="location" id="external">
+      <span class="checkmark"></span>
+    </label>
+    <br>
     <h3>Emulator Core Type:</h3>
       <label class="container-1">GBA
         <input type="radio" name="core" id="gba">
@@ -78,7 +89,7 @@
         <span class="checkmark"></span>
       </label>
       <br>
-      <h3>External Link:</h3>
+      <h3>External Link Or Rom Link</h3>
     <input type="text" id="extLink" name="link" placeholder="Link">
     <br>
     <h3>Background Image Link:</h3>

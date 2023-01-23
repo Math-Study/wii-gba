@@ -94,17 +94,18 @@ function dropInfo(e) {
             let previewImage = localStorage.getItem(ids + "-preview");
             document.querySelector('#preview-link').value = previewImage;
             let linkDestination = localStorage.getItem(ids + "-linkType");
+            let linkValue = localStorage.getItem(ids + "-link");
             console.log("linkDestination: " + linkDestination);
             if (linkDestination == null) {
                 document.querySelector('#emu').checked = true;
             }
             else if (linkDestination == "emu") {
                 document.querySelector('#emu').checked = true;
-                document.querySelector('#extLink').value = linkDestination;
+                document.querySelector('#extLink').value = linkValue;
             }
             else if (linkDestination == "ext") {
                 document.querySelector('#ext').checked = true;
-                document.querySelector('#extLink').value = linkDestination;
+                document.querySelector('#extLink').value = linkValue;
             }
             let core = localStorage.getItem(ids + "-core");
             if (core == null) {
@@ -130,6 +131,7 @@ function dropInfo(e) {
 function saveOptions() {
     const ids = currentId;
     console.log(ids);
+                let romLocation = document.querySelector('input[name="location"]:checked').id;
                 let linkDestination = document.querySelector('input[name="link"]:checked').id;
                 if (linkDestination == "ext") {
                     localStorage.setItem(ids + "-link", document.querySelector('#extLink').value);
@@ -137,8 +139,17 @@ function saveOptions() {
                     console.log(localStorage.getItem(ids + "-link"));
                 }
                 else if (linkDestination == "emu") {
+                    localStorage.setItem(ids + "-linkType", linkDestination);
+                    localStorage.setItem(ids + "-link", document.querySelector('#extLink').value);
                     localStorage.setItem(ids + "-core", document.querySelector('input[name="core"]:checked').id);
                     console.log(localStorage.getItem(ids + "-core"));
+                }
+                if (romLocation == "external") {
+                    localStorage.setItem(ids + "-rom", false);
+                    console.log(localStorage.getItem(ids + "-rom"));
+                } else if (romLocation == "internal") {
+                    localStorage.setItem(ids + "-rom", true);
+                    console.log(localStorage.getItem(ids + "-rom"));
                 }
                 let backgroundImage = document.querySelector('#image-link').value;
                 localStorage.setItem(ids + "-image", backgroundImage);
