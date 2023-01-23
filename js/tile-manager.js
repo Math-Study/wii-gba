@@ -18,10 +18,10 @@ boxes.forEach(box => {
     box.addEventListener('dragenter', dragEnter)
     box.addEventListener('dragover', dragOver);
     box.addEventListener('dragleave', dragLeave);
-    box.addEventListener('drop', drop);
-    box.addEventListener('drop', dropInfo);
 });
 
+document.addEventListener('drop', drop);
+document.addEventListener('drop', dropInfo);
 
 const initialParent = item.parentNode;
 
@@ -86,24 +86,7 @@ function dropInfo(e) {
     switch(ids) {
         case ids:
             console.log(ids)
-            document.querySelector('#save').addEventListener("click", () => {
-                let linkDestination = document.querySelector('input[name="link"]:checked').id;
-                if (linkDestination == "ext") {
-                    localStorage.setItem(ids + "-link", document.querySelector('#extLink').value);
-                    localStorage.setItem(ids + "-linkType", linkDestination);
-                    console.log(localStorage.getItem(ids + "-link"));
-                }
-                else if (linkDestination == "emu") {
-                    localStorage.setItem(ids + "-core", document.querySelector('input[name="core"]:checked').id);
-                    console.log(localStorage.getItem(ids + "-core"));
-                }
-                let backgroundImage = document.querySelector('#image-link').value;
-                localStorage.setItem(ids + "-image", backgroundImage);
-                console.log(localStorage.getItem(ids + "-image"));
-                let previewImage = document.querySelector('#preview-link').value;
-                localStorage.setItem(ids + "-preview", previewImage);
-                console.log(localStorage.getItem(ids + "-preview"));
-            });
+            document.querySelector('#save').addEventListener("click", saveOptions);
         case ids: 
             console.log("work")
             let backgroundImage = localStorage.getItem(ids + "-image");
@@ -143,3 +126,25 @@ function dropInfo(e) {
     }
 } 
 
+
+function saveOptions() {
+    const ids = currentId;
+    console.log(ids);
+                let linkDestination = document.querySelector('input[name="link"]:checked').id;
+                if (linkDestination == "ext") {
+                    localStorage.setItem(ids + "-link", document.querySelector('#extLink').value);
+                    localStorage.setItem(ids + "-linkType", linkDestination);
+                    console.log(localStorage.getItem(ids + "-link"));
+                }
+                else if (linkDestination == "emu") {
+                    localStorage.setItem(ids + "-core", document.querySelector('input[name="core"]:checked').id);
+                    console.log(localStorage.getItem(ids + "-core"));
+                }
+                let backgroundImage = document.querySelector('#image-link').value;
+                localStorage.setItem(ids + "-image", backgroundImage);
+                console.log(localStorage.getItem(ids + "-image"));
+                let previewImage = document.querySelector('#preview-link').value;
+                localStorage.setItem(ids + "-preview", previewImage);
+                console.log(localStorage.getItem(ids + "-preview"));
+    document.querySelector('#save').removeEventListener("click", saveOptions);
+}
