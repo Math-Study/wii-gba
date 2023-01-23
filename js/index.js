@@ -18,22 +18,22 @@ function startup() {
   }, 0);
   PlayHomeSound("homeMusic");
   
-  let box1Prev = "../assets/nsmbdsf.jpg"
+  let box1Prev = "/assets/nsmbdsf.jpg"
   localStorage.setItem("box1-preview", box1Prev);
-  let box2Prev = "../assets/nes-tile.webp"
+  let box2Prev = "/assets/nes-tile.webp"
   localStorage.setItem("box2-preview", box2Prev);
-  let box3Prev = "../assets/nes-tile.webp"
+  let box3Prev = "/assets/nes-tile.webp"
   localStorage.setItem("box3-preview", box3Prev);
-  let box4Prev = "../assets/smbwii.jpg"
+  let box4Prev = "/assets/smbwii.jpg"
   localStorage.setItem("box4-preview", box4Prev);
 
-  let box1Img = "../assets/nsmbdsf.jpg"
+  let box1Img = "/assets/nsmbdsf.jpg"
   localStorage.setItem("box1-image", box1Img);
-  let box2Img = "../assets/nes-tile.webp"
+  let box2Img = "/assets/nes-tile.webp"
   localStorage.setItem("box2-image", box2Img);
-  let box3Img = "../assets/nes-tile.webp"
+  let box3Img = "/assets/nes-tile.webp"
   localStorage.setItem("box3-image", box3Img);
-  let box4Img = "../assets/smbwii.jpg"
+  let box4Img = "/assets/smbwii.jpg"
   localStorage.setItem("box4-image", box4Img);
 
   for (var i = 1; i <= 24; i++) {
