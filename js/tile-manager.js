@@ -68,8 +68,13 @@ function drop(e) {
         draggable.classList.remove('hide');
     }
     console.log(e.target.id);
+    let boxId = e.target.id;
+    let manager = document.getElementById("manage");
+    manager.innerHTML = "You are managing: " + boxId;
 }
 
 
-
 // Logic for Options below here (idk ima go insane)
+
+// Ok I made options much less insane inducing
+

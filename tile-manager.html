@@ -9,10 +9,11 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container wrapper">
         <div class="drop-targets">
             <h1>Tile Editor</h1>
-            <p>Place the blue box wherever you'd like to move the tile to!</p>
+            <p>Please Select the tile you'd like to manage</p>
+            <div class="slide one">
             <div class="box" id="box1">
                 <div class="item" id="item">
                 </div>
@@ -31,7 +32,68 @@
             <div class="box" id="box11"></div>
             <div class="box" id="box12"></div>
         </div>
+            <div class="slide two">
+            <div class="box" id="box13">
+                </div>
+            </div>
+            <div class="box" id="box14"></div>
+            <div class="box" id="box15"></div>
+            <div class="box" id="box16"></div>
+            <br><br>
+            <div class="box" id="box17"></div>
+            <div class="box" id="box18"></div>
+            <div class="box" id="box19"></div>
+            <div class="box" id="box20"></div>
+            <br><br>
+            <div class="box" id="box21"></div>
+            <div class="box" id="box22"></div>
+            <div class="box" id="box23"></div>
+            <div class="box" id="box24"></div>
+        </div>
+        </div>
     </div>
+    <div class="align-right">
+    <h1 id="manage">You are Managing:</h1>
+    <h2>Options:</h2>
+    <h3>Play Link Destination:</h3>
+    <label class="container-1">External Link
+        <input type="radio" checked="checked" name="link">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container-1">Emulator Link
+        <input type="radio" name="link">
+        <span class="checkmark"></span>
+      </label>
+    <br>
+    <h3>Emulator Core Type:</h3>
+      <label class="container-1">GBA
+        <input type="radio" name="core">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container-1">NES
+        <input type="radio" name="core">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container-1">NDS
+        <input checked="checked" type="radio" name="core">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container-1">SegaMD
+        <input type="radio" name="core">
+        <span class="checkmark"></span>
+      </label>
+      <br>
+      <h3>External Link:</h3>
+    <input type="text" id="a-link" name="link" placeholder="Link">
+    <br>
+    <h3>Background Image Link:</h3>
+    <input type="text" id="image-link" name="image" placeholder="Image Link">
+    <br>
+    <h3>Preview Image Link:</h3>
+    <input type="text" id="preview-link" name="preview" placeholder="Preview Link">
+    <br>
+    <button id="save">Save</button>
+</div>
     <script src="js/tile-manager.js"></script>
 </body>
 
