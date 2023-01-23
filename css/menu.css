@@ -125,8 +125,8 @@ body {
     z-index: 100;
     width: 5vw;
     height: auto;
-    right: 2vw;
-    bottom: 50vh;
+    right: 6vw;
+    bottom: 53vh;
     cursor: url("../assets/wii-pointer-blue-ccw.cur"), pointer;
 }
 

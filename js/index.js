@@ -21,16 +21,16 @@ function startup() {
 
 
   // Set Tile Icons
-  var tile1 = document.getElementById("gba-tile");
+  var tile1 = document.getElementById("tile1");
   tile1.style.backgroundImage = "url('assets/nsmbdsf.jpg')";
 
-  var tile2 = document.getElementById("nes-tile");
+  var tile2 = document.getElementById("tile2");
   tile2.style.backgroundImage = "url('assets/nes-tile.webp')";
 
-  var tile3 = document.getElementById("snes-tile");
+  var tile3 = document.getElementById("tile3");
   tile3.style.backgroundImage = "url('assets/nes-tile.webp')";
 
-  var tile4 = document.getElementById("wii-tile");
+  var tile4 = document.getElementById("tile4");
   tile4.style.backgroundImage = "url('assets/smbwii.jpg')";
 
 
@@ -81,7 +81,7 @@ document.querySelectorAll('.empty-tile').forEach(function(el){
 
     openAnimation(this);
 
-    if (this.id == "gba-tile") {
+    if (this.id == "tile1") {
       backImage = "assets/nsmbds.jpg";
       shortName = "Nds";
       link = "launchpad.html";
@@ -91,19 +91,19 @@ document.querySelectorAll('.empty-tile').forEach(function(el){
       localStorage.setItem("coreName", coreName);
     }
 
-    if (this.id == "nes-tile") {
+    if (this.id == "tile2") {
       backImage = "assets/nes-tile.webp";
       shortName = "NES";
       link = "nes.html";
     }
 
-    if (this.id == "wii-tile") {
+    if (this.id == "tile3") {
       backImage = "assets/nsmbwii.jpg";
       shortName = "GBA";
       link = "gba.html";
     }
 
-    if (this.id == "snes-tile") {
+    if (this.id == "tile4") {
       backImage = "assets/nsmbds.jpg";
       shortName = "Nds";
       link = "launchpad.html";
