@@ -17,22 +17,34 @@ function startup() {
     e.style.visibility = 'hidden';
   }, 0);
   PlayHomeSound("homeMusic");
+  
+  let box1Prev = "../assets/nsmbdsf.jpg"
+  localStorage.setItem("box1-preview", box1Prev);
+  let box2Prev = "../assets/nes-tile.webp"
+  localStorage.setItem("box2-preview", box2Prev);
+  let box3Prev = "../assets/nes-tile.webp"
+  localStorage.setItem("box3-preview", box3Prev);
+  let box4Prev = "../assets/smbwii.jpg"
+  localStorage.setItem("box4-preview", box4Prev);
 
+  let box1Img = "../assets/nsmbdsf.jpg"
+  localStorage.setItem("box1-image", box1Img);
+  let box2Img = "../assets/nes-tile.webp"
+  localStorage.setItem("box2-image", box2Img);
+  let box3Img = "../assets/nes-tile.webp"
+  localStorage.setItem("box3-image", box3Img);
+  let box4Img = "../assets/smbwii.jpg"
+  localStorage.setItem("box4-image", box4Img);
 
-
-  // Set Tile Icons
-  var tile1 = document.getElementById("tile1");
-  tile1.style.backgroundImage = "url('assets/nsmbdsf.jpg')";
-
-  var tile2 = document.getElementById("tile2");
-  tile2.style.backgroundImage = "url('assets/nes-tile.webp')";
-
-  var tile3 = document.getElementById("tile3");
-  tile3.style.backgroundImage = "url('assets/nes-tile.webp')";
-
-  var tile4 = document.getElementById("tile4");
-  tile4.style.backgroundImage = "url('assets/smbwii.jpg')";
-
+  for (var i = 1; i <= 24; i++) {
+    var boxPreview = localStorage.getItem("box" + i + "-preview");
+    var tile = document.getElementById("tile" + i);
+    console.log(boxPreview);
+    tile.style.backgroundImage = "url(" + boxPreview + ")";
+    if (boxPreview === null || boxPreview === undefined) {
+      tile.style.backgroundImage = "url('../assets/empty.gif')";
+    }
+  }
 
   window.scrollTo(0, 0);
 }
@@ -81,27 +93,36 @@ document.querySelectorAll('.empty-tile').forEach(function(el){
 
     openAnimation(this);
 
-    if (this.id == "tile1") {
-      backImage = "assets/nsmbds.jpg";
-      shortName = "Nds";
-      link = "launchpad.html";
+    var id = parseInt(el.dataset.id);
+    var boxLink = localStorage.getItem("box" + id + "-link");
+    var boxImage = localStorage.getItem("box" + id + "-image");
+    var boxCore = localStorage.getItem("box" + id + "-core");
+    var boxLinkType = localStorage.getItem("box" + id + "-linkType");
+
+    if (boxLink == null) {
+      document.querySelector("#StartText").href = "404.html";
+    } else if (boxLinkType == "ext") {
+      document.querySelector("#StartText").href = boxLink;
+    } else if (boxLinkType == "emu") {
+      document.querySelector("#StartText").href = 'launchpad.html';
+    }
+
+    if (boxCore == null) {
       coreName = 'nds'
-      let gameFile = "New_Super_Mario_Bros._(USA)"
-      localStorage.setItem("fileName", gameFile);
-      localStorage.setItem("coreName", coreName);
+    } else if (boxLinkType == "emu") { 
+      coreName = boxCore
     }
+    if (boxImage == null) {
+      document.querySelector("#tile-content").style.backgroundImage = "url('assets/nsmbds.jpg')";
+    } else {
+      document.querySelector("#tile-content").style.backgroundImage = "url('" + boxImage + "')";
+    }
+    
+    
 
-    if (this.id == "tile2") {
-      backImage = "assets/nes-tile.webp";
-      shortName = "NES";
-      link = "nes.html";
-    }
 
-    if (this.id == "tile3") {
-      backImage = "assets/nsmbwii.jpg";
-      shortName = "GBA";
-      link = "gba.html";
-    }
+
+    // Example Below
 
     if (this.id == "tile4") {
       backImage = "assets/nsmbds.jpg";
@@ -113,12 +134,7 @@ document.querySelectorAll('.empty-tile').forEach(function(el){
       localStorage.setItem("coreName", coreName);
     }
 
-    let lastTile = localStorage.setItem("lastTile", this.id);
-
-
-    // Add tiles ABOVE HERE!!
-    document.querySelector("#tile-content").style.backgroundImage = "url('" + backImage + "')";
-    document.querySelector("#StartText").href = link;
+    localStorage.setItem("lastTile", this.id);
   });
 });
 
