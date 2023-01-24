@@ -152,11 +152,11 @@ document.querySelectorAll('.empty-tile').forEach(function(el){
       console.log("Rom Location Not Found Saving Info anyway")
       localStorage.setItem("internal", 'true');
       localStorage.setItem("fileName", boxLink);
-    } else if (romLocation == true) {
+    } else if (romLocation === true) {
       localStorage.setItem("internal", 'true');
       localStorage.setItem("fileName", boxLink);
       console.log(boxLink + 'FILENAME (INTERAL ROM)');
-    } else if (romLocation == false) {
+    } else if (romLocation === false) {
       localStorage.setItem("internal", 'false');
       localStorage.setItem("fileName", boxLink);
       console.log(boxLink + 'FILENAME (EXTERNAL ROM)');
