@@ -61,7 +61,7 @@ function startup() {
     console.log(boxPreview);
     tile.style.backgroundImage = "url(" + boxPreview + ")";
     if (boxPreview === null || boxPreview === undefined) {
-      tile.style.backgroundImage = "url('../assets/empty.gif')";
+      tile.style.backgroundImage = "url('assets/empty.gif')";
     }
   }
 
