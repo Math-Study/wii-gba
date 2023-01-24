@@ -145,10 +145,10 @@ function saveOptions() {
                     console.log(localStorage.getItem(ids + "-core"));
                 }
                 if (romLocation == "external") {
-                    localStorage.setItem(ids + "-rom", false);
+                    localStorage.setItem(ids + "-rom", 'false');
                     console.log(localStorage.getItem(ids + "-rom"));
                 } else if (romLocation == "internal") {
-                    localStorage.setItem(ids + "-rom", true);
+                    localStorage.setItem(ids + "-rom", 'true');
                     console.log(localStorage.getItem(ids + "-rom"));
                 }
                 let backgroundImage = document.querySelector('#image-link').value;

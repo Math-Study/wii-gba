@@ -118,6 +118,7 @@ document.querySelectorAll('.empty-tile').forEach(function(el){
     var boxCore = localStorage.getItem("box" + id + "-core");
     var boxLinkType = localStorage.getItem("box" + id + "-linkType");
     var romLocation = localStorage.getItem("box" + id + "-rom");
+    console.log("Box Link: " + boxLink + " Box Image: " + boxImage + " Box Core: " + boxCore + " Box Link Type: " + boxLinkType + " Rom Location: " + romLocation);
 
     if (boxLink == null) {
       document.querySelector("#StartText").href = "404.html";
@@ -148,22 +149,23 @@ document.querySelectorAll('.empty-tile').forEach(function(el){
       document.querySelector("#tile-content").style.backgroundImage = "url('" + boxImage + "')";
     }
     
-    if (romLocation == null) {
+    if (romLocation === null) {
       console.log("Rom Location Not Found Saving Info anyway")
       localStorage.setItem("internal", 'true');
       localStorage.setItem("fileName", boxLink);
-    } else if (romLocation === true) {
+    } else if (romLocation == 'true') {
       localStorage.setItem("internal", 'true');
       localStorage.setItem("fileName", boxLink);
       console.log(boxLink + 'FILENAME (INTERAL ROM)');
-    } else if (romLocation === false) {
+    } else if (romLocation == 'false') {
       localStorage.setItem("internal", 'false');
       localStorage.setItem("fileName", boxLink);
       console.log(boxLink + 'FILENAME (EXTERNAL ROM)');
     } else {
       localStorage.setItem("internal", 'true');
       localStorage.setItem("fileName", boxLink);
-      console.log(boxLink + 'FILENAME (UNSPECIFIED ROM) DEFAULTING TO INTERNAL');
+      console.log(boxLink + ' FILENAME (UNSPECIFIED ROM) DEFAULTING TO INTERNAL');
+      console.log(id);
     }
 
 
