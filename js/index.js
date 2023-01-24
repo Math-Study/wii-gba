@@ -18,6 +18,8 @@ function startup() {
   }, 0);
   PlayHomeSound("homeMusic");
   
+
+  // HARD CODDED TILES (If you add here, please be concious of users Saved tiles, and be sure to incriment #s in the tile-manager so there is not issues)
   let box1Prev = "assets/nsmbdsf.jpg";
   localStorage.setItem("box1-preview", box1Prev);
   let box2Prev = "assets/nes-tile.webp";
@@ -130,6 +132,7 @@ document.querySelectorAll('.empty-tile').forEach(function(el){
       document.querySelector("#StartText").href = boxLink;
     }
 
+    
     if (boxCore == null) {
       coreName = 'nds'
       localStorage.setItem("coreName", coreName);
@@ -166,30 +169,6 @@ document.querySelectorAll('.empty-tile').forEach(function(el){
       localStorage.setItem("fileName", boxLink);
       console.log(boxLink + ' FILENAME (UNSPECIFIED ROM) DEFAULTING TO INTERNAL');
       console.log(id);
-    }
-
-
-
-    // Hard Coded Tiles Below
-
-    if (this.id == "tile3") {
-      backImage = "assets/nsmbds.jpg";
-      shortName = "Nds";
-      link = "launchpad.html";
-      coreName = 'nds'
-      let gameFile = "New_Super_Mario_Bros._(USA)"
-      localStorage.setItem("fileName", gameFile);
-      localStorage.setItem("coreName", coreName);
-    }
-
-    if (this.id == "tile4") {
-      backImage = "assets/nsmbds.jpg";
-      shortName = "Nds";
-      link = "launchpad.html";
-      coreName = 'nds'
-      let gameFile = "New_Super_Mario_Bros._(USA)"
-      localStorage.setItem("fileName", gameFile);
-      localStorage.setItem("coreName", coreName);
     }
 
     localStorage.setItem("lastTile", this.id);
