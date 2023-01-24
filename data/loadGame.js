@@ -2,7 +2,6 @@ let gameName = localStorage.getItem("fileName");
 let coreName = localStorage.getItem("coreName");
 let fileName = null;
 let internal = localStorage.getItem("internal");
-
 if (internal == 'true') {
 console.log("Grabbing internal Roms");
 if (coreName == 'nds') {
@@ -11,15 +10,16 @@ if (coreName == 'nds') {
 }
 
 if (coreName == 'gba') {
-    fileName = 'https://math-study.github.io/Math-Study/gba-host/gba-alt/' + gameName + '.gba';
+    fileName = 'https://math-study.github.io/gba-host/gba-alt/' + gameName + '.gba';
 }
 
 if (coreName == 'nes') {
-    fileName = 'https://math-study.github.io/Math-Study/gba-host/nes-alt/' + gameName + '.nes';
+    fileName = 'https://math-study.github.io/gba-host/nes-alt/' + gameName + '.nes.zip';
 }
 
 if (coreName == 'segaMd') {
-    fileName = 'https://math-study.github.io/Math-Study/gba-host/segaMd-alt/' + gameName + '.zip';
+    fileName = 'https://math-study.github.io/gba-host/segaMd-alt/' + gameName + '.zip';
+
 }
 
 }

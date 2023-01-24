@@ -18,23 +18,42 @@ function startup() {
   }, 0);
   PlayHomeSound("homeMusic");
   
-  let box1Prev = "assets/nsmbdsf.jpg"
+  let box1Prev = "assets/nsmbdsf.jpg";
   localStorage.setItem("box1-preview", box1Prev);
-  let box2Prev = "assets/nes-tile.webp"
+  let box2Prev = "assets/nes-tile.webp";
   localStorage.setItem("box2-preview", box2Prev);
-  let box3Prev = "assets/nes-tile.webp"
+  let box3Prev = "assets/nes-tile.webp";
   localStorage.setItem("box3-preview", box3Prev);
-  let box4Prev = "assets/smbwii.jpg"
+  let box4Prev = "assets/smbwii.jpg";
   localStorage.setItem("box4-preview", box4Prev);
 
-  let box1Img = "assets/nsmbdsf.jpg"
+  let box1Img = "assets/nsmbdsf.jpg";
   localStorage.setItem("box1-image", box1Img);
-  let box2Img = "assets/nes-tile.webp"
+  let box2Img = "assets/nes-tile.webp";
   localStorage.setItem("box2-image", box2Img);
-  let box3Img = "assets/nes-tile.webp"
+  let box3Img = "assets/nes-tile.webp";
   localStorage.setItem("box3-image", box3Img);
-  let box4Img = "assets/smbwii.jpg"
+  let box4Img = "assets/smbwii.jpg";
   localStorage.setItem("box4-image", box4Img);
+
+  let box1Link = "New_Super_Mario_Bros._(USA)";
+  localStorage.setItem("box1-link", box1Link);
+  let box2Link = "New_Super_Mario_Bros._(USA)";
+  localStorage.setItem("box2-link", box2Link);
+  let box3Link = "New_Super_Mario_Bros._(USA)";
+  localStorage.setItem("box3-link", box3Link);
+  let box4Link = "New_Super_Mario_Bros._(USA)";
+  localStorage.setItem("box4-link", box4Link);
+
+  let box1LinkType = "emu";
+  localStorage.setItem("box1-linkType", box1LinkType);
+  let box2LinkType = "emu";
+  localStorage.setItem("box2-linkType", box2LinkType);
+  let box3LinkType = "emu";
+  localStorage.setItem("box3-linkType", box3LinkType);
+  let box4LinkType = "emu";
+  localStorage.setItem("box4-linkType", box4LinkType);
+
 
   for (var i = 1; i <= 24; i++) {
     var boxPreview = localStorage.getItem("box" + i + "-preview");
@@ -106,15 +125,20 @@ document.querySelectorAll('.empty-tile').forEach(function(el){
       document.querySelector("#StartText").href = boxLink;
     } else if (boxLinkType == "emu") {
       document.querySelector("#StartText").href = 'launchpad.html';
+    } else {
+      document.querySelector("#StartText").href = boxLink;
     }
 
     if (boxCore == null) {
       coreName = 'nds'
       localStorage.setItem("coreName", coreName);
       console.log(coreName);
-    } 
-    if (boxLinkType == "emu") { 
+    } else if (boxLinkType == "emu") { 
       coreName = boxCore
+      localStorage.setItem("coreName", coreName);
+      console.log(coreName);
+    } else {
+      coreName = 'nds'
       localStorage.setItem("coreName", coreName);
       console.log(coreName);
     }
@@ -125,18 +149,36 @@ document.querySelectorAll('.empty-tile').forEach(function(el){
     }
     
     if (romLocation == null) {
-
+      console.log("Rom Location Not Found Saving Info anyway")
+      localStorage.setItem("internal", 'true');
+      localStorage.setItem("fileName", boxLink);
     } else if (romLocation == true) {
       localStorage.setItem("internal", 'true');
       localStorage.setItem("fileName", boxLink);
+      console.log(boxLink + 'FILENAME (INTERAL ROM)');
     } else if (romLocation == false) {
       localStorage.setItem("internal", 'false');
       localStorage.setItem("fileName", boxLink);
+      console.log(boxLink + 'FILENAME (EXTERNAL ROM)');
+    } else {
+      localStorage.setItem("internal", 'true');
+      localStorage.setItem("fileName", boxLink);
+      console.log(boxLink + 'FILENAME (UNSPECIFIED ROM) DEFAULTING TO INTERNAL');
     }
 
 
 
-    // Example Below
+    // Hard Coded Tiles Below
+
+    if (this.id == "tile3") {
+      backImage = "assets/nsmbds.jpg";
+      shortName = "Nds";
+      link = "launchpad.html";
+      coreName = 'nds'
+      let gameFile = "New_Super_Mario_Bros._(USA)"
+      localStorage.setItem("fileName", gameFile);
+      localStorage.setItem("coreName", coreName);
+    }
 
     if (this.id == "tile4") {
       backImage = "assets/nsmbds.jpg";
