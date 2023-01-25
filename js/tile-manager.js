@@ -159,3 +159,95 @@ function saveOptions() {
                 console.log(localStorage.getItem(ids + "-preview"));
     document.querySelector('#save').removeEventListener("click", saveOptions);
 }
+
+
+function getGridData() {
+    let gridData = {};
+    for (let i = 1; i <= 20; i++) {
+        let tileId = "tile" + i;
+        let backgroundImage = localStorage.getItem(tileId + "-image");
+        let previewImage = localStorage.getItem(tileId + "-preview");
+        let linkDestination = localStorage.getItem(tileId + "-linkType");
+        let linkValue = localStorage.getItem(tileId + "-link");
+        let core = localStorage.getItem(tileId + "-core");
+
+        let tileData = {};
+        if (backgroundImage) tileData.backgroundImage = backgroundImage;
+        if (previewImage) tileData.previewImage = previewImage;
+        if (linkDestination) tileData.linkDestination = linkDestination;
+        if (linkValue) tileData.linkValue = linkValue;
+        if (core) tileData.core = core;
+
+        gridData[tileId] = tileData;
+    }
+    return gridData;
+}
+
+
+
+// export function
+function exportGrid() {
+    let gridData = {};
+    for (let i = 1; i <= 24; i++) {
+        let id = "box" + i;
+        let element = document.getElementById(id);
+        let linkType = localStorage.getItem(id + "-linkType");
+        let link = localStorage.getItem(id + "-link");
+        let image = localStorage.getItem(id + "-image");
+        let preview = localStorage.getItem(id + "-preview");
+        let core = localStorage.getItem(id + "-core");
+        if (linkType || link || image || preview || core) {
+            gridData[id] = {
+                linkType: linkType,
+                link: link,
+                image: image,
+                preview: preview,
+                core: core
+            }
+        }
+    }
+    let dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(gridData));
+    let downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute("href", dataStr);
+    downloadAnchorNode.setAttribute("download", "gridData.json");
+    document.body.appendChild(downloadAnchorNode);
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+}
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+// import function
+function importGrid() {
+    let input = document.getElementById("importFile");
+    let file = input.files[0];
+
+    let reader = new FileReader();
+    reader.onload = function() {
+        let gridData = JSON.parse(reader.result);
+        for (let id in gridData) {
+            let element = document.getElementById(id);
+            localStorage.setItem(id + "-linkType", gridData[id].linkType);
+            localStorage.setItem(id + "-link", gridData[id].link);
+            localStorage.setItem(id + "-image", gridData[id].image);
+            localStorage.setItem(id + "-preview", gridData[id].preview);
+            localStorage.setItem(id + "-core", gridData[id].core);
+        }
+        console.log(gridData);
+    }
+    reader.readAsText(file);
+}
+
+
+document.querySelector('#export').addEventListener("click", exportGrid);
+
+let importButton = document.getElementById("importFile");
+importButton.addEventListener("change", importGrid);
