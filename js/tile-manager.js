@@ -196,13 +196,15 @@ function exportGrid() {
         let image = localStorage.getItem(id + "-image");
         let preview = localStorage.getItem(id + "-preview");
         let core = localStorage.getItem(id + "-core");
+        let rom = localStorage.getItem(id + "-rom");
         if (linkType || link || image || preview || core) {
             gridData[id] = {
                 linkType: linkType,
                 link: link,
                 image: image,
                 preview: preview,
-                core: core
+                core: core,
+                rom: rom
             }
         }
     }
@@ -240,6 +242,7 @@ function importGrid() {
             localStorage.setItem(id + "-image", gridData[id].image);
             localStorage.setItem(id + "-preview", gridData[id].preview);
             localStorage.setItem(id + "-core", gridData[id].core);
+            localStorage.setItem(id + "-rom", gridData[id].rom);
         }
         console.log(gridData);
     }
